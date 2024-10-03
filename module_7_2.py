@@ -1,4 +1,5 @@
 import os
+from consoleTextStyle import ConsoleTextStyle as CoTeSt
 
 
 def custom_write(file_name: str, strings: list) -> dict[tuple[str, int]: str]:
@@ -12,8 +13,8 @@ def custom_write(file_name: str, strings: list) -> dict[tuple[str, int]: str]:
                 string_positions.update(dict(string_number_n_start))
             return string_positions
     else:
-        print("Файла не существует")
-        return
+        print(f"{CoTeSt.Color.RED}Файла не существует{CoTeSt.REGULAR}")
+        return {"Error": "Файла не существует"}
 
 
 if __name__ == "__main__":
@@ -25,6 +26,6 @@ if __name__ == "__main__":
         'Because there are 2 languages!',
         'Спасибо!'
     ]
-    result = custom_write(text_file_name, info)
+    result = custom_write("text_file_name", info)
     for elem in result.items():
         print(elem)
