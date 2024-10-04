@@ -9,7 +9,7 @@ def custom_write(file_name: str, strings: list) -> dict[tuple[str, int]: str]:
             for string_number in range(len(strings)):
                 file_tell = test_text_file.tell()
                 test_text_file.write(strings[string_number] + "\n")
-                string_number_n_start = [((string_number, file_tell), strings[string_number])]
+                string_number_n_start = [((string_number + 1, file_tell), strings[string_number])]
                 string_positions.update(dict(string_number_n_start))
             return string_positions
     else:
