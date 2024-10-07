@@ -26,7 +26,7 @@ class WordsFinder:
         files_words = self.get_all_words()
         for file_name in files_words.keys():
             if word_to_find.lower() in files_words[file_name]:
-                return {file_name: files_words[file_name].index(word_to_find.lower())}
+                return {file_name: files_words[file_name].index(word_to_find.lower())+1}
             else:
                 continue
         else:
